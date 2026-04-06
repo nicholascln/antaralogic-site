@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Story — AntaraLogic®</title>
+<title>Investor Relations — AntaraLogic®</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -19,7 +19,6 @@
     --gold-light: #d4b87a;
     --copper: #b87a5a;
     --white: #ffffff;
-    --radius: 16px;
     --font-display: 'DM Serif Display', Georgia, serif;
     --font-body: 'DM Sans', -apple-system, sans-serif;
   }
@@ -38,67 +37,211 @@
   .nav-menu div:first-child { width: 24px; }
   .nav-menu div:last-child { width: 16px; }
 
-  /* MENU OVERLAY */
+  /* MENU */
   .menu-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; background: var(--cream); display: flex; flex-direction: column; padding: 80px 36px 40px; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; }
   .menu-overlay.open { opacity: 1; pointer-events: all; }
   .menu-close { position: absolute; top: 16px; right: 24px; width: 32px; height: 32px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
   .menu-close div { position: absolute; width: 24px; height: 2px; background: var(--charcoal); border-radius: 1px; }
   .menu-close div:first-child { transform: rotate(45deg); }
   .menu-close div:last-child { transform: rotate(-45deg); }
-  .menu-nav { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 0; }
+  .menu-nav { flex: 1; display: flex; flex-direction: column; justify-content: center; }
   .menu-item { font-family: var(--font-display); font-size: 32px; color: var(--charcoal); text-decoration: none; padding: 20px 0; transition: color 0.2s; }
   .menu-item:hover { color: var(--copper); }
   .menu-divider { height: 1px; background: rgba(26,26,46,0.08); }
   .menu-footer { text-align: center; }
-  .m-lang { display: inline-flex; gap: 0; border: 1px solid rgba(26,26,46,0.12); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
-  .m-lang button { padding: 10px 20px; font-size: 14px; font-weight: 500; border: none; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; background: transparent; color: var(--text-secondary); }
+  .m-lang { display: inline-flex; border: 1px solid rgba(26,26,46,0.12); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+  .m-lang button { padding: 10px 20px; font-size: 14px; font-weight: 500; border: none; cursor: pointer; font-family: var(--font-body); background: transparent; color: var(--text-secondary); }
   .m-lang button.active { background: var(--charcoal); color: var(--cream); }
   .m-credit { font-size: 12px; color: var(--text-muted); }
 
-  /* STORY HEADER */
-  .story-header { padding: 120px 28px 48px; text-align: center; }
+  /* HEADER */
+  .ir-header {
+    padding: 130px 28px 48px;
+    text-align: center;
+  }
   .section-label { font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-  .story-header h1 { font-family: var(--font-display); font-size: clamp(34px, 8vw, 50px); line-height: 1.15; color: var(--charcoal); margin-bottom: 16px; animation: fadeUp 0.8s ease 0.1s both; }
-  .story-header .subtitle { font-family: var(--font-display); font-size: 18px; font-style: italic; color: var(--copper); animation: fadeUp 0.8s ease 0.25s both; }
+  .ir-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 8vw, 46px);
+    line-height: 1.15;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+    animation: fadeUp 0.8s ease 0.1s both;
+  }
+  .ir-header .subtitle {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto;
+    animation: fadeUp 0.8s ease 0.25s both;
+  }
 
-  /* STORY CONTENT */
-  .story-section { padding: 0 28px 48px; max-width: 640px; margin: 0 auto; }
-  .story-section p { font-size: 17px; line-height: 1.85; color: var(--text-secondary); margin-bottom: 28px; }
-  .story-section p:last-child { margin-bottom: 0; }
-  .nick { font-weight: 600; color: var(--text-primary); }
+  /* PITCH */
+  .pitch {
+    padding: 20px 28px 60px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .pitch p {
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+  }
+  .pitch .highlight {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
 
   /* PULL QUOTE */
-  .pull-quote { padding: 40px 28px 48px; max-width: 640px; margin: 0 auto; text-align: center; }
-  .pull-quote blockquote { font-family: var(--font-display); font-size: clamp(22px, 5.5vw, 28px); font-style: italic; line-height: 1.45; color: var(--text-primary); position: relative; padding-top: 32px; }
-  .pull-quote blockquote::before { content: '\201C'; font-size: 72px; color: var(--gold); position: absolute; top: -12px; left: 50%; transform: translateX(-50%); opacity: 0.3; font-family: Georgia, serif; }
+  .pull-quote {
+    padding: 36px 28px 44px;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .pull-quote blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 5.5vw, 28px);
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--text-primary);
+    position: relative;
+    padding-top: 32px;
+  }
+  .pull-quote blockquote::before {
+    content: '“';
+    font-size: 72px;
+    color: var(--gold);
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.3;
+    font-family: Georgia, serif;
+  }
 
-  /* ILLUSTRATION BREAK */
-  .illus-break { padding: 40px 28px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
-  .illus-icon { width: 68px; height: 68px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; }
-  .illus-icon.gold-bg { background: rgba(196,162,101,0.12); }
-  .illus-icon.charcoal-bg { background: rgba(26,26,46,0.06); }
-  .illus-icon.copper-bg { background: rgba(184,122,90,0.12); }
-  .illus-label { font-family: var(--font-display); font-size: 20px; color: var(--charcoal); text-align: center; }
-  .illus-sublabel { font-size: 14px; color: var(--text-muted); text-align: center; max-width: 300px; line-height: 1.5; }
+  /* STATS */
+  .ir-stats {
+    padding: 60px 28px;
+    background: var(--charcoal-warm);
+    color: var(--cream);
+  }
+  .ir-stats-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .ir-stats h2 {
+    font-family: var(--font-display);
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--cream);
+  }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 20px;
+  }
+  .stat-item { text-align: center; }
+  .stat-item .num {
+    font-family: var(--font-display);
+    font-size: 34px;
+    color: var(--gold-light);
+    margin-bottom: 4px;
+  }
+  .stat-item .label {
+    font-size: 13px;
+    color: rgba(245,240,232,0.5);
+    line-height: 1.4;
+  }
 
-  /* SECTION HEADING */
-  .story-heading { padding: 16px 28px 20px; max-width: 640px; margin: 0 auto; }
-  .story-heading h2 { font-family: var(--font-display); font-size: 28px; color: var(--charcoal); }
-  .gold-line { width: 40px; height: 3px; background: var(--gold); margin-top: 12px; border-radius: 2px; }
+  /* CONTACT */
+  .contact {
+    padding: 60px 28px 80px;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .contact h2 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .contact .intro {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
 
-  /* BIO */
-  .bio-section { padding: 40px 28px; max-width: 640px; margin: 0 auto; border-top: 1px solid rgba(26,26,46,0.08); }
-  .bio-section p { font-size: 14px; line-height: 1.75; color: var(--text-muted); font-style: italic; }
+  .contact-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 36px 28px;
+    box-shadow: 0 2px 24px rgba(26,26,46,0.06);
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .contact-card .name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+  .contact-card .title {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-top: 1px solid rgba(26,26,46,0.06);
+  }
+  .contact-row .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .contact-row .icon.email-icon { background: rgba(196,162,101,0.12); }
+  .contact-row .icon.phone-icon { background: rgba(26,26,46,0.06); }
+  .contact-row .label { font-size: 12px; color: var(--text-muted); letter-spacing: 0.5px; }
+  .contact-row .value {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+  .contact-row a {
+    color: var(--charcoal);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-row a:hover { color: var(--copper); }
 
-  /* BACK LINK */
-  .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--copper); font-size: 15px; font-weight: 500; text-decoration: none; padding: 20px 28px; max-width: 640px; margin: 0 auto; transition: gap 0.3s; }
-  .back-link:hover { gap: 10px; }
+  .contact-note {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-style: italic;
+    margin-top: 20px;
+  }
+
+  /* GOLD LINE */
+  .gold-line { width: 40px; height: 3px; background: var(--gold); margin: 12px auto 0; border-radius: 2px; }
 
   /* FOOTER */
   footer { padding: 60px 28px 36px; background: var(--cream-dark); text-align: center; }
   .footer-logo-img { width: 80px; margin: 0 auto 20px; display: block; filter: drop-shadow(0 2px 8px rgba(26,26,46,0.06)); }
   .footer-tagline { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; line-height: 1.6; }
-  .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 28px; }
+  .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 28px; flex-wrap: wrap; }
   .footer-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--charcoal); }
   .footer-credit { font-size: 11px; color: var(--text-muted); line-height: 1.8; }
@@ -110,9 +253,9 @@
 
   @media (min-width: 768px) {
     nav { padding: 18px 60px; }
-    .story-header { padding: 160px 60px 60px; }
-    .story-section, .pull-quote, .story-heading, .bio-section, .back-link { padding-left: 60px; padding-right: 60px; }
-    .illus-break { padding: 48px 60px; }
+    .ir-header { padding: 160px 60px 60px; }
+    .pitch, .pull-quote, .contact { padding-left: 60px; padding-right: 60px; }
+    .ir-stats { padding: 80px 60px; }
     footer { padding: 80px 60px 40px; }
   }
 </style>
@@ -127,7 +270,7 @@
   </div>
 </nav>
 
-<!-- MENU OVERLAY -->
+<!-- MENU -->
 <div class="menu-overlay" id="menuOverlay">
   <div class="menu-close" id="menuClose"><div></div><div></div></div>
   <nav class="menu-nav">
@@ -146,136 +289,92 @@
   </div>
 </div>
 
-<!-- STORY HEADER -->
-<section class="story-header">
-  <div class="section-label" style="animation: fadeUp 0.6s ease both;">OUR STORY</div>
-  <h1>Our Story</h1>
-  <p class="subtitle">Where Human Instinct Meets Machine Intelligence</p>
+<!-- HEADER -->
+<section class="ir-header">
+  <div class="section-label" style="animation: fadeUp 0.6s ease both;">INVESTOR RELATIONS</div>
+  <h1>Building the next infrastructure layer.</h1>
+  <p class="subtitle">AntaraLogic® invites strategic partners who believe that AI’s next chapter isn’t about smarter models — it’s about smarter groups.</p>
 </section>
 
-<!-- OPENING -->
-<div class="story-section reveal">
-  <p>Somewhere between the fluorescent hum of a Cisco office in Kuala Lumpur and the quiet of a kitchen table in Johor, a question took shape that would not let go: what happens when the smartest technology on earth is built for individuals, but the most important decisions in life are made by groups?</p>
+<!-- THE PITCH -->
+<div class="pitch reveal">
+  <p>The AI industry has spent a decade perfecting the conversation between one human and one machine. <span class="highlight">Nobody has built the infrastructure for what happens when groups think with AI.</span></p>
 </div>
 
-<div class="story-section reveal">
-  <p>For twenty years, <span class="nick">Nicholas Chin</span>—the founder of AntaraLogic®—sold enterprise technology across Asia-Pacific. Not from behind a desk—from inside the room where deals were made, where teams argued, where a single unspoken tension between two colleagues could derail a million-dollar contract. He watched groups succeed and fail, and he noticed something the technology never captured: the space between what people said and what they meant.</p>
+<div class="pitch reveal">
+  <p>AntaraLogic® is closing that gap. Through AntaraPlatforms®, we are building a platform where small circles of people — families, teams, business partners — collaborate with an AI that understands the group, not just the individual. Three integrated products. One shared Data Lake®. A constraint architecture capped at twelve members, designed to make trust computable.</p>
 </div>
 
-<!-- ILLUSTRATION 1: The Observation -->
-<div class="illus-break reveal">
-  <div class="illus-icon gold-bg">💡</div>
-  <div class="illus-label">The Observation</div>
-  <p class="illus-sublabel">Every AI talks to one person at a time. But life’s biggest decisions are made together.</p>
-</div>
-
-<div class="story-section reveal">
-  <p>When large language models arrived—ChatGPT, Claude, Gemini—the world marvelled at their ability to converse, to reason, to create. But every interface was the same: one human, one machine, one conversation. The architecture assumed that intelligence was a private transaction.</p>
-</div>
-
-<div class="story-section reveal">
-  <p><span class="nick">Nick</span> knew otherwise. Intelligence—the kind that builds businesses and holds families together and keeps small teams alive in hard markets—is not private. It is collective. It emerges from the friction of different perspectives, the patience of listening, and the courage to say what needs to be said in front of people who matter.</p>
-</div>
-
-<!-- PULL QUOTE 1 -->
 <div class="pull-quote reveal">
-  <blockquote>Every AI on the market is built for the individual. None of them are built for the group.</blockquote>
+  <blockquote>We don’t compete with AI models. We give them the one thing they lack: group context.</blockquote>
 </div>
 
-<div class="story-section reveal">
-  <p>AntaraLogic® was born from that observation. Not as a technology company seeking a market, but as a market reality seeking the right technology. In ASEAN alone, there are more than seventy million small and medium enterprises—the kopitiam operators, the family logistics firms, the three-person design studios—all of whom collaborate daily with the tools of a previous era: group chats that bury insight in noise, spreadsheets that nobody updates, and meetings that end without resolution.</p>
+<div class="pitch reveal">
+  <p>The addressable market begins with ASEAN’s seventy million SMEs — businesses that run on group chats, gut instinct, and relationships built face-to-face. These are enterprises too small for Salesforce but too serious for WhatsApp. <span class="highlight">AntaraPlatforms® meets them where they already are: in conversation.</span></p>
 </div>
 
-<div class="story-section reveal">
-  <p>These businesses do not need artificial intelligence that replaces them. They need intelligence that understands them—not as individual users, but as working groups with shared context, unspoken dynamics, and collective memory.</p>
+
+
+
+
+<div class="pitch reveal">
+  <p>AntaraLogic® is a Malaysian-incorporated company with a clear vision, a validated architecture, and a founder with twenty years of enterprise technology experience across Asia-Pacific. <span class="highlight">We welcome conversations with partners who share our conviction that ASEAN’s next chapter in AI should be built from within, not imported.</span></p>
 </div>
 
-<!-- SECTION: THE ARCHITECTURE -->
-<div class="story-heading reveal">
-  <h2>The Architecture</h2>
-  <div class="gold-line"></div>
-</div>
+<!-- STATS -->
+<section class="ir-stats reveal">
+  <div class="ir-stats-inner">
+    <h2>By the Numbers</h2>
+    <div class="stat-grid">
+      <div class="stat-item">
+        <div class="num">$40B</div>
+        <div class="label">Total addressable<br>market</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">70M</div>
+        <div class="label">ASEAN SMEs<br>underserved by AI</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">3</div>
+        <div class="label">Integrated products,<br>one Data Lake®</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">6</div>
+        <div class="label">AI models used<br>for validation</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="story-section reveal">
-  <p>AntaraLogic® sits between the AI engines built by companies like Anthropic, OpenAI, and Google — and the real human relationships those engines are supposed to serve. The big models can reason, write, and create. But they don't understand your team. They don't know who in the room disagrees but won't say it. They don't see the pattern forming across three separate conversations. That's the gap <span class="nick">Nick</span> set out to close — not by building another AI model, but by building the platform that gives those models context about how groups actually work.</p>
-</div>
+<!-- CONTACT -->
+<section class="contact">
+  <div class="section-label reveal">GET IN TOUCH</div>
+  <h2 class="reveal">Let’s talk.</h2>
+  <p class="intro reveal">For investor enquiries, partnership discussions, or to request our information memorandum, please reach out directly to the founder.</p>
 
-<div class="story-section reveal">
-  <p>The AntaraPlatforms® product suite is built around a simple but profound constraint: the Power of 12. Groups of one to twelve members interact with an AI presence called @Sage®, which observes, learns, and surfaces patterns—but only when two or more independent data points from different members converge. @Sage® does not speak to flatter. It does not speak to fill silence. It speaks when something real has emerged from the group’s own interaction.</p>
-</div>
+  <div class="contact-card reveal">
+    <div class="name">Nicholas Chin</div>
+    <div class="title">Founder & CEO, AntaraLogic®</div>
 
-<div class="story-section reveal">
-  <p>Twelve members generate sixty-six unique communication paths. That is enough complexity for genuine pattern recognition, but small enough that every member can hold every other member—and the AI—accountable. The constraint is not a limitation. It is the architecture of trust.</p>
-</div>
+    <div class="contact-row">
+      <div class="icon email-icon">✉</div>
+      <div>
+        <div class="label">EMAIL</div>
+        <div class="value"><a href="/cdn-cgi/l/email-protection#3f51565c5750535e4c115c5756517f5e514b5e4d5e535058565c115c5052"><span class="__cf_email__" data-cfemail="d4babdb7bcbbb8b5a7fab7bcbdba94b5baa0b5a6b5b8bbb3bdb7fab7bbb9">[email&#160;protected]</span></a></div>
+      </div>
+    </div>
 
-<!-- ILLUSTRATION 2: The Architecture -->
-<div class="illus-break reveal">
-  <div class="illus-icon charcoal-bg">🔗</div>
-  <div class="illus-label">Power of 12</div>
-  <p class="illus-sublabel">12 members. 66 communication paths. Constraint is the architecture of trust.</p>
-</div>
+    <div class="contact-row">
+      <div class="icon phone-icon">☎</div>
+      <div>
+        <div class="label">MOBILE</div>
+        <div class="value"><a href="tel:+6581117688">+65 8111 7688</a></div>
+      </div>
+    </div>
+  </div>
 
-<!-- SECTION: THE EQUALISER -->
-<div class="story-heading reveal">
-  <h2>The Equaliser</h2>
-  <div class="gold-line"></div>
-</div>
-
-<!-- PULL QUOTE 2 -->
-<div class="pull-quote reveal">
-  <blockquote>AI is the great equaliser. A brilliant expert friend that everyone deserves but few have access to.</blockquote>
-</div>
-
-<div class="story-section reveal">
-  <p>Consider a café operator in Hartamas. He manages a team of five. His margins are thin. He cannot afford a management consultant, a business analyst, or even a full-time bookkeeper. But his team talks every day—about what sold, what didn’t, which supplier was late, which regular customer hasn’t been in this week.</p>
-</div>
-
-<div class="story-section reveal">
-  <p>Now give that team @Sage® through AntaraPlatforms®. Not as a chatbot that answers questions, but as a quiet presence that listens to the rhythm of the business. When two staff members independently mention that weekend demand for iced drinks has shifted, @Sage® surfaces the pattern. When the owner mentions rising costs in one conversation and a staff member mentions a cheaper alternative in another, @Sage® connects the dots. No one asked. The insight emerged because the group was already thinking about it—they just didn’t know it yet.</p>
-</div>
-
-<div class="story-section reveal">
-  <p>This is the promise of collective intelligence infrastructure. Not AI that thinks for you, but AI that helps groups think together. The kopitiam operator gets the same calibre of insight that a multinational gets from a team of analysts. The three-person design studio sees patterns in their client feedback that would take weeks to uncover manually. The family planning a wedding coordinates across generations without losing the thread.</p>
-</div>
-
-<!-- ILLUSTRATION 3: The Tech Gap -->
-<div class="illus-break reveal">
-  <div class="illus-icon copper-bg">🌏</div>
-  <div class="illus-label">The Gap AI Hasn’t Closed</div>
-  <p class="illus-sublabel">70 million ASEAN SMEs still run on group chats and spreadsheets. The AI revolution hasn’t reached them—yet.</p>
-</div>
-
-<!-- SECTION: THE TECH GAP -->
-<div class="story-heading reveal">
-  <h2>The Gap AI Hasn’t Closed</h2>
-  <div class="gold-line"></div>
-</div>
-
-<div class="story-section reveal">
-  <p>Southeast Asia is not Silicon Valley. It is a mosaic of languages, cultures, and business practices where relationships precede transactions and trust is earned in person. The region’s seventy million SMEs are the backbone of its economy, but they have been largely left out of the AI revolution—not because the technology is unavailable, but because it was not built for them.</p>
-</div>
-
-<div class="story-section reveal">
-  <p>AntaraPlatforms® is designed for exactly how they work. In circles, not silos. In conversation, not dashboards. In the language and rhythm of the teams themselves, not the sanitised templates of enterprise software built for Fortune 500 boardrooms.</p>
-</div>
-
-<!-- MISSION -->
-<div class="story-heading reveal">
-  <h2>The Mission</h2>
-  <div class="gold-line"></div>
-</div>
-
-<div class="story-section reveal">
-  <p>To build the infrastructure that makes collective intelligence accessible to every team, every family, and every community—starting with ASEAN.</p>
-</div>
-
-<!-- BACK TO PRODUCTS -->
-<a href="index.html#products" class="back-link reveal">Explore our products →</a>
-
-<!-- BIO -->
-<div class="bio-section reveal">
-  <p>*Nicholas Chin is the Founder & CEO of AntaraLogic®. Born in Ipoh, educated in Newcastle upon Tyne, returned to work in Kuala Lumpur, moved down south to Singapore to expand his career, and now living in Johor Bahru. Twenty years of enterprise technology sales across Asia-Pacific. Building something that didn’t exist—because somebody had to.</p>
-</div>
+  <p class="contact-note reveal">All enquiries are handled personally by the founder. We respond within 24 hours. Confidential discussions welcome under mutual NDA.</p>
+</section>
 
 <!-- FOOTER -->
 <footer>
@@ -290,35 +389,20 @@
   <p class="footer-credit">© 2026 AntaraLogic Holdings Sdn Bhd<br>All rights reserved.<br><br>Built with Claude Opus 4.6 · For AntaraLogic®</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   document.body.classList.add('js-loaded');
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
 
-  // Hamburger menu
   document.getElementById('menuBtn').addEventListener('click', () => {
     document.getElementById('menuOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
   });
   document.getElementById('menuClose').addEventListener('click', () => {
     document.getElementById('menuOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-  });
-  document.querySelectorAll('.menu-item').forEach(item => {
-    item.addEventListener('click', () => {
-      document.getElementById('menuOverlay').classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  });
-</script>
-
-</body>
-</html>
+    document.body.style.overflow = ''
