@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perhubungan Pelabur — AntaraLogic®</title>
-<meta property="og:title" content="Perhubungan Pelabur — AntaraLogic®">
-<meta property="og:description" content="AntaraLogic® menjemput rakan strategik yang percaya bahawa fasa seterusnya AI bukan tentang model yang lebih pintar — tetapi tentang kumpulan yang lebih pintar.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.antaralogic.com/ir.html">
+<title>Daftar Minat — AntaraLogic®</title>
+<meta name="description" content="Register your interest in AntaraLogic® — Made in Malaysia. Built for ASEAN.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <style>
+
 
   :root {
     --cream: #f5f0e8;
@@ -79,76 +79,85 @@
   .js-loaded .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
   .reveal.visible { opacity: 1 !important; transform: translateY(0) !important; }
 
-  .ir-header { padding: 130px 28px 48px; text-align: center; }
-  .ir-header h1 { font-family: var(--font-display); font-size: clamp(32px, 8vw, 46px); line-height: 1.15; color: var(--charcoal); margin-bottom: 16px; animation: fadeUp 0.8s ease 0.1s both; }
-  .ir-header .subtitle { font-size: 17px; color: var(--text-secondary); line-height: 1.6; max-width: 480px; margin: 0 auto; animation: fadeUp 0.8s ease 0.25s both; }
+  /* HOMEPAGE SPECIFIC */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 120px 28px 60px; text-align: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(26,26,46,0.04); border: 1px solid rgba(26,26,46,0.07); border-radius: 100px; padding: 7px 16px; font-size: 12px; font-weight: 600; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 40px; animation: fadeUp 0.7s ease both; }
+  .hero-badge .dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: dotPulse 2s ease infinite; }
+  .hero-logo { width: min(82vw, 440px); margin-bottom: 44px; filter: drop-shadow(0 4px 20px rgba(26,26,46,0.08)); animation: comboLogo 1.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.1s both; }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(32px, 7.5vw, 48px); line-height: 1.15; color: var(--charcoal); margin-bottom: 20px; max-width: 520px; animation: fadeUp 0.9s ease 0.6s both; }
+  .hero h1 em { font-style: italic; color: var(--copper); }
+  .hero p { font-size: 17px; line-height: 1.65; color: var(--text-secondary); max-width: 440px; margin-bottom: 40px; animation: fadeUp 0.9s ease 0.75s both; }
+  .hero-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--charcoal); color: var(--cream); padding: 16px 36px; border-radius: 100px; font-size: 15px; font-weight: 500; text-decoration: none; letter-spacing: 0.3px; transition: all 0.3s ease; animation: fadeUp 0.9s ease 0.9s both; }
+  .hero-cta:hover { background: var(--charcoal-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(26,26,46,0.15); }
 
-  .pitch { padding: 20px 28px 60px; max-width: 640px; margin: 0 auto; }
-  .pitch p { font-size: 17px; line-height: 1.85; color: var(--text-secondary); margin-bottom: 28px; }
-  .pitch .highlight { color: var(--text-primary); font-weight: 500; }
+  @keyframes comboLogo { 0% { opacity: 0; transform: translateY(40px) scale(1.08); } 60% { opacity: 1; transform: translateY(-4px) scale(1.01); } 80% { transform: translateY(2px) scale(0.995); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 
-  .pull-quote { padding: 36px 28px 44px; max-width: 640px; margin: 0 auto; text-align: center; }
-  .pull-quote blockquote { font-family: var(--font-display); font-size: clamp(22px, 5.5vw, 28px); font-style: italic; line-height: 1.45; color: var(--text-primary); position: relative; padding-top: 32px; }
-  .pull-quote blockquote::before { content: '\201C'; font-size: 72px; color: var(--gold); position: absolute; top: -12px; left: 50%; transform: translateX(-50%); opacity: 0.3; font-family: Georgia, serif; }
+  /* PRODUCTS */
+  .products { padding: 80px 28px; background: var(--white); }
+  .products-header { text-align: center; margin-bottom: 48px; }
+  .products-platform-logo { width: min(65vw, 300px); margin: 16px auto; display: block; filter: drop-shadow(0 2px 10px rgba(26,26,46,0.06)); }
+  .products-header .subtitle { font-size: 16px; color: var(--text-secondary); line-height: 1.6; max-width: 440px; margin: 0 auto; }
+  .product-card { background: var(--cream); border-radius: var(--radius); padding: 28px 24px; margin-bottom: 14px; transition: all 0.3s ease; cursor: pointer; border: 1px solid transparent; }
+  .product-card:hover { border-color: rgba(26,26,46,0.06); box-shadow: 0 8px 40px rgba(26,26,46,0.12); transform: translateY(-2px); }
+  .product-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .product-icon { width: 46px; height: 46px; background: var(--charcoal); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; color: white; }
+  .product-name { font-family: var(--font-display); font-size: 21px; }
+  .product-type { font-size: 12px; color: var(--text-muted); font-weight: 500; letter-spacing: 0.3px; margin-top: 2px; }
+  .product-desc { font-size: 15px; line-height: 1.65; color: var(--text-secondary); }
+  .product-link { display: inline-flex; align-items: center; gap: 6px; color: var(--charcoal); font-size: 14px; font-weight: 500; margin-top: 14px; text-decoration: none; transition: gap 0.3s ease; }
+  .product-link:hover { gap: 10px; }
 
-  .ir-stats { padding: 60px 28px; background: var(--charcoal-warm); color: var(--cream); }
-  .ir-stats-inner { max-width: 640px; margin: 0 auto; }
-  .ir-stats h2 { font-family: var(--font-display); font-size: 26px; text-align: center; margin-bottom: 40px; color: var(--cream); }
-  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 20px; }
-  .stat-item { text-align: center; }
-  .stat-item .num { font-family: var(--font-display); font-size: 34px; color: var(--gold-light); margin-bottom: 4px; }
-  .stat-item .label { font-size: 13px; color: rgba(245,240,232,0.5); line-height: 1.4; }
+  /* HOW IT WORKS */
+  .how-it-works { padding: 80px 28px; background: var(--cream); }
+  .how-it-works h2 { font-family: var(--font-display); font-size: 30px; margin-bottom: 44px; }
+  .step { display: flex; gap: 18px; margin-bottom: 36px; align-items: flex-start; }
+  .step-num { width: 40px; height: 40px; min-width: 40px; background: var(--charcoal); color: var(--cream); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 17px; }
+  .step h3 { font-size: 17px; font-weight: 600; margin-bottom: 5px; }
+  .step p { font-size: 15px; line-height: 1.6; color: var(--text-secondary); }
 
-  .contact { padding: 60px 28px 80px; max-width: 640px; margin: 0 auto; text-align: center; }
-  .contact h2 { font-family: var(--font-display); font-size: 28px; margin-bottom: 12px; }
-  .contact .intro { font-size: 16px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 40px; }
+  /* POSITIONING */
+  .positioning { padding: 80px 28px; background: var(--charcoal-warm); color: var(--cream); text-align: center; }
+  .positioning h2 { font-family: var(--font-display); font-size: 26px; line-height: 1.35; margin-bottom: 36px; color: var(--cream); max-width: 480px; margin-left: auto; margin-right: auto; }
+  .positioning h2 em { font-style: italic; color: var(--gold-light); }
+  .pos-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 16px; max-width: 360px; margin: 0 auto; }
+  .pos-stat { text-align: center; }
+  .pos-stat .num { font-family: var(--font-display); font-size: 38px; color: var(--gold-light); margin-bottom: 2px; }
+  .pos-stat .label { font-size: 12px; color: rgba(245,240,232,0.5); letter-spacing: 0.5px; }
 
-  .contact-card { background: var(--white); border-radius: 16px; padding: 36px 28px; box-shadow: 0 2px 24px rgba(26,26,46,0.06); text-align: left; margin-bottom: 20px; }
-  .contact-card .name { font-family: var(--font-display); font-size: 22px; margin-bottom: 4px; }
-  .contact-card .title { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
-  .contact-row { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid rgba(26,26,46,0.06); }
-  .contact-row .icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-  .contact-row .icon.email-icon { background: rgba(196,162,101,0.12); }
-  .contact-row .icon.phone-icon { background: rgba(26,26,46,0.06); }
-  .contact-row .label { font-size: 12px; color: var(--text-muted); letter-spacing: 0.5px; }
-  .contact-row .value { font-size: 15px; font-weight: 500; color: var(--charcoal); }
-  .contact-row a { color: var(--charcoal); text-decoration: none; transition: color 0.2s; }
-  .contact-row a:hover { color: var(--copper); }
-
-  .contact-note { font-size: 13px; color: var(--text-muted); line-height: 1.6; font-style: italic; margin-top: 20px; }
+  /* FOUNDER TEASER */
+  .founder { padding: 80px 28px; background: var(--white); }
+  .founder h2 { font-family: var(--font-display); font-size: 30px; margin-bottom: 24px; }
+  .founder-quote { font-family: var(--font-display); font-size: 21px; font-style: italic; line-height: 1.5; color: var(--text-primary); margin-bottom: 24px; padding-left: 20px; border-left: 3px solid var(--gold); }
+  .founder p { font-size: 15px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 16px; }
+  .founder-link { display: inline-flex; align-items: center; gap: 6px; color: var(--copper); font-size: 15px; font-weight: 500; text-decoration: none; margin-top: 8px; transition: gap 0.3s; }
+  .founder-link:hover { gap: 10px; }
 
   @media (min-width: 768px) {
     nav { padding: 18px 60px; }
-    .ir-header { padding: 160px 60px 60px; }
-    .pitch, .pull-quote, .contact { padding-left: 60px; padding-right: 60px; }
-    .ir-stats { padding: 80px 60px; }
+    .hero { padding: 160px 60px 100px; }
+    .hero-logo { width: min(50vw, 480px); }
+    .products, .how-it-works, .founder { padding: 100px 60px; }
+    .products-inner { max-width: 700px; margin: 0 auto; }
+    .positioning { padding: 100px 60px; }
+    .pos-stats { max-width: 440px; }
     footer { padding: 80px 60px 40px; }
   }
 
+
   /* FLOATING BACK-TO-HOME BUTTON */
   .back-home {
-    position: fixed;
-    top: 14px;
-    left: 24px;
-    z-index: 150;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+    position: fixed; top: 14px; left: 24px; z-index: 150;
+    width: 36px; height: 36px; border-radius: 50%;
     background: rgba(245,240,232,0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(26,26,46,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--charcoal);
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; color: var(--charcoal);
     transition: all 0.25s ease;
     box-shadow: 0 2px 12px rgba(26,26,46,0.06);
   }
   .back-home:hover {
-    background: var(--charcoal);
-    color: var(--cream);
+    background: var(--charcoal); color: var(--cream);
     transform: translateX(-2px);
     box-shadow: 0 4px 16px rgba(26,26,46,0.18);
   }
@@ -158,66 +167,43 @@
     .back-home { top: 18px; left: 60px; width: 40px; height: 40px; }
     .back-home svg { width: 18px; height: 18px; }
   }
-
-  /* Push nav logo right on small screens to avoid back-button overlap */
   nav .nav-logo { padding-left: 48px; }
-  @media (min-width: 768px) {
-    nav .nav-logo { padding-left: 56px; }
+  @media (min-width: 768px) { nav .nav-logo { padding-left: 56px; } }
+
+  /* CONTACT PAGE */
+  .contact-hero {
+    min-height: calc(100vh - 60px);
+    padding: 140px 28px 60px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: var(--cream); text-align: center;
+  }
+  .contact-hero .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .contact-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 7vw, 52px);
+    line-height: 1.15; color: var(--charcoal);
+    max-width: 540px; margin: 0 auto 20px;
+    animation: fadeUp 0.8s ease 0.1s both;
+  }
+  .contact-hero h1 em { font-style: italic; color: var(--copper); }
+  .contact-hero .intro {
+    font-size: 17px; line-height: 1.65; color: var(--text-secondary);
+    max-width: 480px; margin: 0 auto 44px;
+    animation: fadeUp 0.8s ease 0.2s both;
   }
 
-  /* PRODUCT ICON OVERRIDE — for branded icons (transparent bg) */
-  .product-icon.has-image {
-    background: transparent !important;
-    width: 56px !important;
-    height: 56px !important;
-    border-radius: 0 !important;
-    padding: 0;
-    overflow: visible;
-  }
-  .product-icon.has-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    filter: drop-shadow(0 2px 8px rgba(26,26,46,0.15));
-  }
-
-  .hub-card-icon.has-image {
-    background: transparent !important;
-    width: 64px !important;
-    height: 64px !important;
-    border-radius: 0 !important;
-    overflow: visible;
-  }
-  .hub-card-icon.has-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    filter: drop-shadow(0 3px 10px rgba(26,26,46,0.18));
-  }
-
-  /* Hero icon for individual product pages */
-  .product-hero-icon {
-    width: 96px;
-    height: 96px;
-    margin: 0 auto 28px;
-    display: block;
-    filter: drop-shadow(0 4px 16px rgba(26,26,46,0.18));
-    animation: fadeUp 0.7s ease 0.05s both;
-  }
-  @media (min-width: 768px) {
-    .product-hero-icon { width: 112px; height: 112px; }
-  }
-
-
-  /* INVESTOR FORM (matches contact.html) */
+  /* FORM */
   .contact-form {
     width: 100%; max-width: 460px; margin: 0 auto;
     background: var(--white); border-radius: var(--radius);
     padding: 36px 28px;
     box-shadow: 0 12px 40px rgba(26,26,46,0.08);
     border: 1px solid rgba(26,26,46,0.05);
+    animation: fadeUp 0.9s ease 0.3s both;
   }
   .form-group { margin-bottom: 20px; text-align: left; }
   .form-group label {
@@ -225,7 +211,7 @@
     color: var(--text-secondary); letter-spacing: 0.4px;
     text-transform: uppercase; margin-bottom: 8px;
   }
-  .form-group input {
+  .form-group input, .form-group select {
     width: 100%; padding: 13px 16px;
     border: 1px solid rgba(26,26,46,0.12);
     border-radius: 10px; background: var(--cream);
@@ -233,7 +219,13 @@
     color: var(--charcoal); transition: all 0.2s ease;
     -webkit-appearance: none; appearance: none;
   }
-  .form-group input:focus {
+  .form-group select {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%231a1a2e' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+  }
+  .form-group input:focus, .form-group select:focus {
     outline: none; border-color: var(--gold);
     background: var(--white);
     box-shadow: 0 0 0 3px rgba(196,162,101,0.12);
@@ -250,7 +242,9 @@
     background: var(--charcoal-light); transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(26,26,46,0.18);
   }
-  .form-submit:disabled { opacity: 0.6; cursor: wait; transform: none; }
+  .form-submit:disabled {
+    opacity: 0.6; cursor: wait; transform: none;
+  }
   .form-status {
     margin-top: 18px; padding: 14px 16px;
     border-radius: 10px; font-size: 14px; line-height: 1.5;
@@ -272,12 +266,16 @@
     font-size: 12px; color: var(--text-muted);
     margin-top: 16px; line-height: 1.5;
   }
+  @media (min-width: 768px) {
+    .contact-hero { padding: 180px 60px 100px; }
+    .contact-form { padding: 44px 40px; }
+  }
 
 </style>
 </head>
 <body>
 
-<a href="index.html" class="back-home" id="backHome" aria-label="Back to home" data-en-aria="Back to home" data-bm-aria="Kembali ke laman utama">
+<a href="index.html" class="back-home" id="backHome" aria-label="Back to home">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
 </a>
 
@@ -304,86 +302,46 @@
     <div class="menu-divider"></div>
     <a href="ir.html" class="menu-item" data-en="Investor Relations" data-bm="Perhubungan Pelabur">Perhubungan Pelabur</a>
     <div class="menu-divider"></div>
-  <a href="contact.html" class="menu-item" data-en="Register Interest" data-bm="Daftar Minat">Daftar Minat</a>
+    <a href="contact.html" class="menu-item" data-en="Register Interest" data-bm="Daftar Minat">Daftar Minat</a>
     <div class="menu-divider"></div>
-    </nav>
+  </nav>
   <div class="menu-footer">
     <p class="m-credit">© 2026 AntaraLogic Holdings Sdn Bhd</p>
   </div>
 </div>
 
-<section class="ir-header">
-  <div class="section-label" style="animation: fadeUp 0.6s ease both;" data-en="INVESTOR RELATIONS" data-bm="PERHUBUNGAN PELABUR">PERHUBUNGAN PELABUR</div>
-  <h1 data-en="Building the next infrastructure layer." data-bm="Membina lapisan infrastruktur seterusnya.">Membina lapisan infrastruktur seterusnya.</h1>
-  <p class="subtitle" data-en="AntaraLogic® invites strategic partners who believe that AI's next chapter isn't about smarter models — it's about smarter groups." data-bm="AntaraLogic® menjemput rakan strategik yang percaya bahawa fasa seterusnya AI bukan tentang model yang lebih pintar — tetapi tentang kumpulan yang lebih pintar.">AntaraLogic® menjemput rakan strategik yang percaya bahawa fasa seterusnya AI bukan tentang model yang lebih pintar — tetapi tentang kumpulan yang lebih pintar.</p>
-</section>
+<section class="contact-hero">
+  <div class="section-label" data-en="REGISTER INTEREST" data-bm="DAFTAR MINAT">DAFTAR MINAT</div>
+  <h1 data-en-html="Let's <em>talk</em>." data-bm-html="Mari <em>berbual</em>." data-en="Be among the first to know." data-bm="Jadilah antara yang pertama mengetahui.">Mari <em>berbual</em>.</h1>
+  <p class="intro" data-en="We'd love to hear from you. Drop us a line and we'll get back to you personally." data-bm="Kami ingin mendengar daripada anda. Tinggalkan butiran dan kami akan menghubungi anda secara peribadi.">Kami ingin mendengar daripada anda. Tinggalkan butiran dan kami akan menghubungi anda secara peribadi.</p>
 
-<div class="pitch reveal">
-  <p data-en-html="The AI industry has spent a decade perfecting the conversation between one human and one machine. <span class=&quot;highlight&quot;>Nobody has built the infrastructure for what happens when groups think with AI.</span>" data-bm-html="Industri AI telah menghabiskan sedekad menyempurnakan perbualan antara satu manusia dan satu mesin. <span class=&quot;highlight&quot;>Tiada siapa membina infrastruktur untuk apa yang berlaku apabila kumpulan berfikir bersama AI.</span>">Industri AI telah menghabiskan sedekad menyempurnakan perbualan antara satu manusia dan satu mesin. <span class="highlight">Tiada siapa membina infrastruktur untuk apa yang berlaku apabila kumpulan berfikir bersama AI.</span></p>
-</div>
-
-<div class="pitch reveal">
-  <p data-en="AntaraLogic® is closing that gap. Through AntaraPlatforms®, we are building a platform where small circles of people — families, teams, business partners — collaborate with an AI that understands the group, not just the individual. Three integrated products. One shared Data Lake®. A constraint architecture capped at twelve members, designed to make trust computable." data-bm="AntaraLogic® menutup jurang tersebut. Melalui AntaraPlatforms®, kami membina platform di mana lingkaran kecil manusia — keluarga, pasukan, rakan niaga — bekerjasama dengan AI yang memahami kumpulan, bukan sekadar individu. Tiga produk bersepadu. Satu Data Lake® yang dikongsi. Seni bina berasaskan kekangan yang dihadkan kepada dua belas ahli, direka untuk menjadikan kepercayaan boleh dikira.">AntaraLogic® menutup jurang tersebut. Melalui AntaraPlatforms®, kami membina platform di mana lingkaran kecil manusia — keluarga, pasukan, rakan niaga — bekerjasama dengan AI yang memahami kumpulan, bukan sekadar individu. Tiga produk bersepadu. Satu Data Lake® yang dikongsi. Seni bina berasaskan kekangan yang dihadkan kepada dua belas ahli, direka untuk menjadikan kepercayaan boleh dikira.</p>
-</div>
-
-<div class="pull-quote reveal">
-  <blockquote data-en="&quot;We don't compete with AI models. We give them the one thing they lack: group context.&quot;" data-bm="&quot;Kami tidak bersaing dengan model AI. Kami memberikan mereka satu perkara yang mereka kekurangan: konteks kumpulan.&quot;">"Kami tidak bersaing dengan model AI. Kami memberikan mereka satu perkara yang mereka kekurangan: konteks kumpulan."</blockquote>
-</div>
-
-<div class="pitch reveal">
-  <p data-en-html="The addressable market begins with ASEAN's seventy million SMEs — businesses that run on group chats, gut instinct, and relationships built face-to-face. These are enterprises too small for Salesforce but too serious for WhatsApp. <span class=&quot;highlight&quot;>AntaraPlatforms® meets them where they already are: in conversation.</span>" data-bm-html="Pasaran sasaran bermula dengan tujuh puluh juta PKS di ASEAN — perniagaan yang beroperasi melalui sembang kumpulan, naluri, dan hubungan yang dibina secara bersemuka. Ini adalah perusahaan yang terlalu kecil untuk Salesforce tetapi terlalu serius untuk WhatsApp. <span class=&quot;highlight&quot;>AntaraPlatforms® menemui mereka di tempat mereka sedia berada: dalam perbualan.</span>">Pasaran sasaran bermula dengan tujuh puluh juta PKS di ASEAN — perniagaan yang beroperasi melalui sembang kumpulan, naluri, dan hubungan yang dibina secara bersemuka. Ini adalah perusahaan yang terlalu kecil untuk Salesforce tetapi terlalu serius untuk WhatsApp. <span class="highlight">AntaraPlatforms® menemui mereka di tempat mereka sedia berada: dalam perbualan.</span></p>
-</div>
-
-<div class="pitch reveal">
-  <p data-en-html="AntaraLogic® is a Malaysian-incorporated company with a clear vision, a validated architecture, and a founder with twenty years of enterprise technology experience across Asia-Pacific. <span class=&quot;highlight&quot;>We welcome conversations with partners who share our conviction that ASEAN's next chapter in AI should be built from within, not imported.</span>" data-bm-html="AntaraLogic® ialah syarikat yang diperbadankan di Malaysia dengan visi yang jelas, seni bina yang telah disahkan, dan pengasas dengan dua puluh tahun pengalaman teknologi perusahaan di seluruh Asia-Pasifik. <span class=&quot;highlight&quot;>Kami mengalu-alukan perbualan dengan rakan kongsi yang berkongsi keyakinan bahawa fasa seterusnya AI di ASEAN harus dibina dari dalam, bukan diimport.</span>">AntaraLogic® ialah syarikat yang diperbadankan di Malaysia dengan visi yang jelas, seni bina yang telah disahkan, dan pengasas dengan dua puluh tahun pengalaman teknologi perusahaan di seluruh Asia-Pasifik. <span class="highlight">Kami mengalu-alukan perbualan dengan rakan kongsi yang berkongsi keyakinan bahawa fasa seterusnya AI di ASEAN harus dibina dari dalam, bukan diimport.</span></p>
-</div>
-
-<section class="ir-stats reveal">
-  <div class="ir-stats-inner">
-    <h2 data-en="By the Numbers" data-bm="Mengikut Angka">Mengikut Angka</h2>
-    <div class="stat-grid">
-      <div class="stat-item">
-        <div class="num">$40B</div>
-        <div class="label" data-en-html="Total addressable<br>market" data-bm-html="Jumlah pasaran<br>boleh dicapai">Jumlah pasaran<br>boleh dicapai</div>
-      </div>
-      <div class="stat-item">
-        <div class="num">70M</div>
-        <div class="label" data-en-html="ASEAN SMEs<br>underserved by AI" data-bm-html="PKS ASEAN yang<br>kurang dilayani oleh AI">PKS ASEAN yang<br>kurang dilayani oleh AI</div>
-      </div>
-      <div class="stat-item">
-        <div class="num">3</div>
-        <div class="label" data-en-html="Integrated products,<br>one Data Lake®" data-bm-html="Produk bersepadu,<br>satu Data Lake®">Produk bersepadu,<br>satu Data Lake®</div>
-      </div>
-      <div class="stat-item">
-        <div class="num">6</div>
-        <div class="label" data-en-html="AI models used<br>for validation" data-bm-html="Model AI digunakan<br>untuk pengesahan">Model AI digunakan<br>untuk pengesahan</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact">
-  <div class="section-label reveal" data-en="GET IN TOUCH" data-bm="HUBUNGI KAMI">HUBUNGI KAMI</div>
-  <h2 class="reveal" data-en="Let's talk." data-bm="Mari berbual.">Mari berbual.</h2>
-  <p class="intro reveal" data-en="Leave your details and we'll reach out to continue the conversation." data-bm="Tinggalkan butiran anda dan kami akan menghubungi anda untuk meneruskan perbualan.">Tinggalkan butiran anda dan kami akan menghubungi anda untuk meneruskan perbualan.</p>
-
-  <form class="contact-form reveal" id="investorForm" novalidate>
+  <form class="contact-form" id="contactForm" novalidate>
     <div class="form-group">
-      <label for="inv_name" data-en="Your name" data-bm="Nama anda">Nama anda</label>
-      <input type="text" id="inv_name" name="name" required autocomplete="name" placeholder="Ahmad Zaki" />
+      <label for="name" data-en="Your name" data-bm="Nama anda">Nama anda</label>
+      <input type="text" id="name" name="name" required autocomplete="name" placeholder="Ahmad Zaki" />
     </div>
     <div class="form-group">
-      <label for="inv_email" data-en="Email address" data-bm="Alamat emel">Alamat emel</label>
-      <input type="email" id="inv_email" name="email" required autocomplete="email" placeholder="ahmad@example.com" />
+      <label for="email" data-en="Email address" data-bm="Alamat emel">Alamat emel</label>
+      <input type="email" id="email" name="email" required autocomplete="email" placeholder="ahmad@example.com" />
     </div>
     <div class="form-group">
-      <label for="inv_phone" data-en="Contact number" data-bm="Nombor telefon">Nombor telefon</label>
-      <input type="tel" id="inv_phone" name="phone" required autocomplete="tel" placeholder="+60 12 345 6789" />
+      <label for="phone" data-en="Contact number" data-bm="Nombor telefon">Nombor telefon</label>
+      <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="+60 12 345 6789" />
     </div>
-    <input type="hidden" name="type" value="Investor" />
-    <button type="submit" class="form-submit" id="invSubmitBtn" data-en="Request a conversation" data-bm="Mohon perbualan">Mohon perbualan</button>
-    <div class="form-status" id="invFormStatus"></div>
-    <p class="form-privacy" data-en="All enquiries are handled personally. Confidential discussions welcome under mutual NDA." data-bm="Semua pertanyaan dikendalikan secara peribadi. Perbincangan sulit dialu-alukan di bawah NDA bersama.">Semua pertanyaan dikendalikan secara peribadi. Perbincangan sulit dialu-alukan di bawah NDA bersama.</p>
+    <div class="form-group">
+      <label for="type" data-en="I'm interested as a..." data-bm="Saya berminat sebagai...">Saya berminat sebagai...</label>
+      <select id="type" name="type" required>
+        <option value="" data-en="— Please select —" data-bm="— Sila pilih —">— Sila pilih —</option>
+        <option value="Investor" data-en="Investor" data-bm="Pelabur">Pelabur</option>
+        <option value="Partner" data-en="Partner" data-bm="Rakan Kongsi">Rakan Kongsi</option>
+        <option value="Customer" data-en="Customer / Early User" data-bm="Pelanggan / Pengguna Awal">Pelanggan / Pengguna Awal</option>
+        <option value="Press" data-en="Press / Media" data-bm="Akhbar / Media">Akhbar / Media</option>
+        <option value="Other" data-en="Other" data-bm="Lain-lain">Lain-lain</option>
+      </select>
+    </div>
+    <button type="submit" class="form-submit" id="submitBtn" data-en="Register my interest" data-bm="Daftarkan minat saya">Daftarkan minat saya</button>
+    <div class="form-status" id="formStatus"></div>
+    <p class="form-privacy" data-en="Your details stay private. We'll only use them to reply to you." data-bm="Butiran anda kekal peribadi. Kami hanya akan menggunakannya untuk membalas anda.">Butiran anda kekal peribadi. Kami hanya akan menggunakannya untuk membalas anda.</p>
   </form>
 </section>
 
@@ -397,17 +355,16 @@
     <a href="products.html" data-en="Products" data-bm="Produk">Produk</a>
     <a href="ir.html" data-en="Investor Relations" data-bm="Perhubungan Pelabur">Perhubungan Pelabur</a>
     <a href="contact.html" data-en="Register Interest" data-bm="Daftar Minat">Daftar Minat</a>
-  </div>
+    </div>
   <p class="footer-credit">
     <span data-en="© 2026 AntaraLogic Holdings Sdn Bhd" data-bm="© 2026 AntaraLogic Holdings Sdn Bhd">© 2026 AntaraLogic Holdings Sdn Bhd</span><br>
-    <span data-en="All rights reserved." data-bm="Hak cipta terpelihara.">Hak cipta terpelihara.</span><br><br>
     <span data-en="Made in Malaysia. Built for ASEAN." data-bm="Dibuat di Malaysia. Dibina untuk ASEAN.">Dibuat di Malaysia. Dibina untuk ASEAN.</span>
   </p>
 </footer>
 
 <script>
   document.body.classList.add('js-loaded');
-  // Hide back button on homepage
+  
   (function() {
     var path = window.location.pathname.split('/').pop() || 'index.html';
     if (path === '' || path === 'index.html') {
@@ -417,41 +374,31 @@
   })();
 
 
+  // ========== LANGUAGE SWITCHER ==========
   function getCurrentLang() {
     return localStorage.getItem('antaralogic_lang') || 'bm';
   }
-
   function setLanguage(lang) {
     localStorage.setItem('antaralogic_lang', lang);
     document.documentElement.lang = (lang === 'bm') ? 'ms' : 'en';
-
     document.querySelectorAll('[data-en][data-bm]').forEach(el => {
-      el.textContent = el.getAttribute('data-' + lang);
+      if (el.tagName === 'OPTION') {
+        el.textContent = el.getAttribute('data-' + lang);
+      } else {
+        el.textContent = el.getAttribute('data-' + lang);
+      }
     });
-
     document.querySelectorAll('[data-en-html][data-bm-html]').forEach(el => {
       el.innerHTML = el.getAttribute('data-' + lang + '-html');
     });
-
     document.getElementById('langBM').classList.toggle('active', lang === 'bm');
     document.getElementById('langEN').classList.toggle('active', lang === 'en');
   }
-
   setLanguage(getCurrentLang());
-
   document.getElementById('langBM').addEventListener('click', () => setLanguage('bm'));
   document.getElementById('langEN').addEventListener('click', () => setLanguage('en'));
 
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => observer.observe(el));
-
-  // Hamburger menu
+  // ========== HAMBURGER MENU ==========
   document.getElementById('menuBtn').addEventListener('click', () => {
     document.getElementById('menuOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -467,68 +414,63 @@
     });
   });
 
-  // ========== INVESTOR FORM ==========
-  (function() {
-    var form = document.getElementById('investorForm');
-    if (!form) return;
-    var submitBtn = document.getElementById('invSubmitBtn');
-    var status = document.getElementById('invFormStatus');
+  // ========== FORM SUBMIT ==========
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const status = document.getElementById('formStatus');
 
-    function getCurrentLang() {
-      return localStorage.getItem('antaralogic_lang') || 'bm';
-    }
+  const messages = {
+    sending: { en: 'Sending...', bm: 'Menghantar...' },
+    success: { en: 'Thank you! We\'ve received your interest and will be in touch.', bm: 'Terima kasih! Kami telah menerima minat anda dan akan menghubungi anda.' },
+    error: { en: 'Something went wrong. Please try again or email us directly.', bm: 'Sesuatu yang tidak kena. Sila cuba lagi atau emel kami terus.' },
+    invalid: { en: 'Please fill in all fields correctly.', bm: 'Sila isi semua medan dengan betul.' }
+  };
 
-    var messages = {
-      sending: { en: 'Sending...', bm: 'Menghantar...' },
-      success: { en: "Thank you. We've received your message and will be in touch personally.", bm: 'Terima kasih. Kami telah menerima mesej anda dan akan menghubungi anda secara peribadi.' },
-      error: { en: 'Something went wrong. Please try again.', bm: 'Sesuatu yang tidak kena. Sila cuba lagi.' },
-      invalid: { en: 'Please fill in all fields correctly.', bm: 'Sila isi semua medan dengan betul.' }
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const lang = getCurrentLang();
+
+    const data = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      phone: form.phone.value.trim(),
+      type: form.type.value
     };
 
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      var lang = getCurrentLang();
-      var data = {
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        phone: form.phone.value.trim(),
-        type: 'Investor'
-      };
+    // Validate
+    if (!data.name || !data.email || !data.phone || !data.type) {
+      status.className = 'form-status error';
+      status.textContent = messages.invalid[lang];
+      return;
+    }
 
-      if (!data.name || !data.email || !data.phone) {
-        status.className = 'form-status error';
-        status.textContent = messages.invalid[lang];
-        return;
+    submitBtn.disabled = true;
+    submitBtn.textContent = messages.sending[lang];
+    status.className = 'form-status';
+    status.textContent = '';
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        status.className = 'form-status success';
+        status.textContent = messages.success[lang];
+        form.reset();
+        submitBtn.textContent = (lang === 'bm') ? '✓ Dihantar' : '✓ Sent';
+      } else {
+        throw new Error('Server error');
       }
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = messages.sending[lang];
-      status.className = 'form-status';
-      status.textContent = '';
-
-      try {
-        var res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-        if (res.ok) {
-          status.className = 'form-status success';
-          status.textContent = messages.success[lang];
-          form.reset();
-          submitBtn.textContent = (lang === 'bm') ? '✓ Dihantar' : '✓ Sent';
-        } else {
-          throw new Error('Server error');
-        }
-      } catch (err) {
-        status.className = 'form-status error';
-        status.textContent = messages.error[lang];
-        submitBtn.disabled = false;
-        submitBtn.textContent = (lang === 'bm') ? 'Mohon perbualan' : 'Request a conversation';
-      }
-    });
-  })();
-
+    } catch (err) {
+      status.className = 'form-status error';
+      status.textContent = messages.error[lang];
+      submitBtn.disabled = false;
+      submitBtn.textContent = (lang === 'bm') ? 'Daftarkan minat saya' : 'Register my interest';
+    }
+  });
 </script>
 
 </body>

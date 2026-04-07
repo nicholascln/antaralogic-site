@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Story — AntaraLogic®</title>
-    <meta property="og:title" content="Our Story — AntaraLogic®">
-    <meta property="og:description" content="The first AI designed not for individuals talking to a machine — but for groups thinking together with one.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.antaralogic.com">
+<title>Kisah Kami — AntaraLogic®</title>
+<meta property="og:title" content="Kisah Kami — AntaraLogic®">
+<meta property="og:description" content="Kisah di sebalik AntaraLogic — di mana naluri manusia bertemu kecerdasan mesin.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.antaralogic.com/story.html">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <style>
+
   :root {
     --cream: #f5f0e8;
     --cream-dark: #ebe5d9;
@@ -36,7 +37,10 @@
   .nav-logo { font-family: var(--font-body); font-weight: 600; font-size: 17px; letter-spacing: -0.3px; color: var(--charcoal); text-decoration: none; }
   .nav-logo span { color: var(--text-muted); font-weight: 400; font-size: 14px; }
   .nav-right { display: flex; align-items: center; gap: 14px; }
-  .nav-lang { font-size: 13px; font-weight: 500; color: var(--text-muted); cursor: pointer; padding: 6px 12px; border: 1px solid rgba(26,26,46,0.1); border-radius: 6px; }
+  .nav-lang { display: inline-flex; align-items: center; font-size: 13px; font-weight: 500; border: 1px solid rgba(26,26,46,0.12); border-radius: 6px; overflow: hidden; }
+  .nav-lang button { background: transparent; border: none; padding: 6px 10px; font-size: 13px; font-weight: 500; color: var(--text-muted); cursor: pointer; font-family: var(--font-body); transition: all 0.2s; }
+  .nav-lang button.active { background: var(--charcoal); color: var(--cream); }
+  .nav-lang .divider { width: 1px; background: rgba(26,26,46,0.12); }
   .nav-menu { width: 28px; height: 28px; display: flex; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; }
   .nav-menu div { height: 2px; background: var(--charcoal); border-radius: 1px; }
   .nav-menu div:first-child { width: 24px; }
@@ -49,19 +53,34 @@
   .menu-close div { position: absolute; width: 24px; height: 2px; background: var(--charcoal); border-radius: 1px; }
   .menu-close div:first-child { transform: rotate(45deg); }
   .menu-close div:last-child { transform: rotate(-45deg); }
-  .menu-nav { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 0; }
+  .menu-nav { flex: 1; display: flex; flex-direction: column; justify-content: center; }
   .menu-item { font-family: var(--font-display); font-size: 32px; color: var(--charcoal); text-decoration: none; padding: 20px 0; transition: color 0.2s; }
   .menu-item:hover { color: var(--copper); }
   .menu-divider { height: 1px; background: rgba(26,26,46,0.08); }
   .menu-footer { text-align: center; }
-  .m-lang { display: inline-flex; gap: 0; border: 1px solid rgba(26,26,46,0.12); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
-  .m-lang button { padding: 10px 20px; font-size: 14px; font-weight: 500; border: none; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; background: transparent; color: var(--text-secondary); }
-  .m-lang button.active { background: var(--charcoal); color: var(--cream); }
   .m-credit { font-size: 12px; color: var(--text-muted); }
+
+  /* SECTION LABEL */
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+
+  /* FOOTER */
+  footer { padding: 60px 28px 36px; background: var(--cream-dark); text-align: center; }
+  .footer-logo-img { width: 80px; margin: 0 auto 20px; display: block; opacity: 1; filter: drop-shadow(0 2px 8px rgba(26,26,46,0.06)); }
+  .footer-tagline { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; line-height: 1.6; }
+  .footer-coming { display: inline-flex; align-items: center; gap: 6px; background: rgba(196,162,101,0.1); border: 1px solid rgba(196,162,101,0.18); color: var(--gold); padding: 7px 16px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; margin: 0 auto 24px; }
+  .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 28px; flex-wrap: wrap; }
+  .footer-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--charcoal); }
+  .footer-credit { font-size: 11px; color: var(--text-muted); line-height: 1.8; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes dotPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  .js-loaded .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
+  .reveal.visible { opacity: 1 !important; transform: translateY(0) !important; }
 
   /* STORY HEADER */
   .story-header { padding: 120px 28px 48px; text-align: center; }
-  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
   .story-header h1 { font-family: var(--font-display); font-size: clamp(34px, 8vw, 50px); line-height: 1.15; color: var(--charcoal); margin-bottom: 16px; animation: fadeUp 0.8s ease 0.1s both; }
   .story-header .subtitle { font-family: var(--font-display); font-size: 18px; font-style: italic; color: var(--copper); animation: fadeUp 0.8s ease 0.25s both; }
 
@@ -98,20 +117,6 @@
   .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--copper); font-size: 15px; font-weight: 500; text-decoration: none; padding: 20px 28px; max-width: 640px; margin: 0 auto; transition: gap 0.3s; }
   .back-link:hover { gap: 10px; }
 
-  /* FOOTER */
-  footer { padding: 60px 28px 36px; background: var(--cream-dark); text-align: center; }
-  .footer-logo-img { width: 80px; margin: 0 auto 20px; display: block; filter: drop-shadow(0 2px 8px rgba(26,26,46,0.06)); }
-  .footer-tagline { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; line-height: 1.6; }
-  .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 28px; }
-  .footer-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--charcoal); }
-  .footer-credit { font-size: 11px; color: var(--text-muted); line-height: 1.8; }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-  .js-loaded .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
   @media (min-width: 768px) {
     nav { padding: 18px 60px; }
     .story-header { padding: 160px 60px 60px; }
@@ -119,190 +124,309 @@
     .illus-break { padding: 48px 60px; }
     footer { padding: 80px 60px 40px; }
   }
+
+  /* FLOATING BACK-TO-HOME BUTTON */
+  .back-home {
+    position: fixed;
+    top: 14px;
+    left: 24px;
+    z-index: 150;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(245,240,232,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(26,26,46,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--charcoal);
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 12px rgba(26,26,46,0.06);
+  }
+  .back-home:hover {
+    background: var(--charcoal);
+    color: var(--cream);
+    transform: translateX(-2px);
+    box-shadow: 0 4px 16px rgba(26,26,46,0.18);
+  }
+  .back-home svg { width: 16px; height: 16px; }
+  .back-home.is-home { display: none; }
+  @media (min-width: 768px) {
+    .back-home { top: 18px; left: 60px; width: 40px; height: 40px; }
+    .back-home svg { width: 18px; height: 18px; }
+  }
+
+  /* Push nav logo right on small screens to avoid back-button overlap */
+  nav .nav-logo { padding-left: 48px; }
+  @media (min-width: 768px) {
+    nav .nav-logo { padding-left: 56px; }
+  }
+
+  /* PRODUCT ICON OVERRIDE — for branded icons (transparent bg) */
+  .product-icon.has-image {
+    background: transparent !important;
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 0 !important;
+    padding: 0;
+    overflow: visible;
+  }
+  .product-icon.has-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 2px 8px rgba(26,26,46,0.15));
+  }
+
+  .hub-card-icon.has-image {
+    background: transparent !important;
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 0 !important;
+    overflow: visible;
+  }
+  .hub-card-icon.has-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 3px 10px rgba(26,26,46,0.18));
+  }
+
+  /* Hero icon for individual product pages */
+  .product-hero-icon {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 28px;
+    display: block;
+    filter: drop-shadow(0 4px 16px rgba(26,26,46,0.18));
+    animation: fadeUp 0.7s ease 0.05s both;
+  }
+  @media (min-width: 768px) {
+    .product-hero-icon { width: 112px; height: 112px; }
+  }
+
 </style>
 </head>
 <body>
 
+<a href="index.html" class="back-home" id="backHome" aria-label="Back to home" data-en-aria="Back to home" data-bm-aria="Kembali ke laman utama">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+</a>
+
 <nav>
   <a href="index.html" class="nav-logo">AntaraLogic<span>®</span></a>
   <div class="nav-right">
-    <div class="nav-lang">EN</div>
+    <div class="nav-lang">
+      <button id="langBM" class="active">BM</button>
+      <div class="divider"></div>
+      <button id="langEN">EN</button>
+    </div>
     <div class="nav-menu" id="menuBtn"><div></div><div></div></div>
   </div>
 </nav>
 
-<!-- MENU OVERLAY -->
 <div class="menu-overlay" id="menuOverlay">
   <div class="menu-close" id="menuClose"><div></div><div></div></div>
   <nav class="menu-nav">
-    <a href="index.html" class="menu-item">Home</a>
+    <a href="index.html" class="menu-item" data-en="Home" data-bm="Laman Utama">Laman Utama</a>
     <div class="menu-divider"></div>
-    <a href="story.html" class="menu-item">Our Story</a>
+    <a href="story.html" class="menu-item" data-en="Our Story" data-bm="Kisah Kami">Kisah Kami</a>
     <div class="menu-divider"></div>
-    <a href="index.html#products" class="menu-item">Products</a>
+    <a href="products.html" class="menu-item" data-en="Products" data-bm="Produk">Produk</a>
     <div class="menu-divider"></div>
-    <a href="ir.html" class="menu-item">Investor Relations</a>
+    <a href="ir.html" class="menu-item" data-en="Investor Relations" data-bm="Perhubungan Pelabur">Perhubungan Pelabur</a>
     <div class="menu-divider"></div>
-  </nav>
+  <a href="contact.html" class="menu-item" data-en="Register Interest" data-bm="Daftar Minat">Daftar Minat</a>
+    <div class="menu-divider"></div>
+    </nav>
   <div class="menu-footer">
-    <div class="m-lang"><button class="active">EN</button><button>BM</button></div>
     <p class="m-credit">© 2026 AntaraLogic Holdings Sdn Bhd</p>
   </div>
 </div>
 
-<!-- STORY HEADER -->
 <section class="story-header">
-  <div class="section-label" style="animation: fadeUp 0.6s ease both;">OUR STORY</div>
-  <h1>Our Story</h1>
-  <p class="subtitle">Where Human Instinct Meets Machine Intelligence</p>
+  <div class="section-label" style="animation: fadeUp 0.6s ease both;" data-en="OUR STORY" data-bm="KISAH KAMI">KISAH KAMI</div>
+  <h1 data-en="Our Story" data-bm="Kisah Kami">Kisah Kami</h1>
+  <p class="subtitle" data-en="Where Human Instinct Meets Machine Intelligence" data-bm="Di Mana Naluri Manusia Bertemu Kecerdasan Mesin">Di Mana Naluri Manusia Bertemu Kecerdasan Mesin</p>
 </section>
 
-<!-- OPENING -->
 <div class="story-section reveal">
-  <p>Somewhere between the fluorescent hum of a Cisco office in Kuala Lumpur and the quiet of a kitchen table in Johor, a question took shape that would not let go: what happens when the smartest technology on earth is built for individuals, but the most important decisions in life are made by groups?</p>
+  <p data-en="Somewhere between the fluorescent hum of a Cisco office in Kuala Lumpur and the quiet of a kitchen table in Johor, a question took shape that would not let go: what happens when the smartest technology on earth is built for individuals, but the most important decisions in life are made by groups?" data-bm="Di suatu titik antara dengungan lampu pendarfluor di pejabat Cisco di Kuala Lumpur dan keheningan sebuah meja dapur di Johor, satu persoalan mula terbentuk — dan enggan dilepaskan: apakah yang berlaku apabila teknologi paling pintar di dunia dibina untuk individu, sedangkan keputusan paling penting dalam hidup dibuat oleh kumpulan?">Di suatu titik antara dengungan lampu pendarfluor di pejabat Cisco di Kuala Lumpur dan keheningan sebuah meja dapur di Johor, satu persoalan mula terbentuk — dan enggan dilepaskan: apakah yang berlaku apabila teknologi paling pintar di dunia dibina untuk individu, sedangkan keputusan paling penting dalam hidup dibuat oleh kumpulan?</p>
 </div>
 
 <div class="story-section reveal">
-  <p>For twenty years, <span class="nick">Nicholas Chin</span>—the founder of AntaraLogic®—sold enterprise technology across Asia-Pacific. Not from behind a desk—from inside the room where deals were made, where teams argued, where a single unspoken tension between two colleagues could derail a million-dollar contract. He watched groups succeed and fail, and he noticed something the technology never captured: the space between what people said and what they meant.</p>
+  <p data-en-html="For twenty years, <span class=&quot;nick&quot;>Nicholas Chin</span> — the founder of AntaraLogic® — sold enterprise technology across Asia-Pacific. Not from behind a desk — from inside the room where deals were made, where teams argued, where a single unspoken tension between two colleagues could derail a million-dollar contract. He watched groups succeed and fail, and he noticed something the technology never captured: the space between what people said and what they meant." data-bm-html="Selama dua puluh tahun, <span class=&quot;nick&quot;>Nicholas Chin</span> — pengasas AntaraLogic® — menjual teknologi perusahaan di seluruh Asia-Pasifik. Bukan dari belakang meja — tetapi dari dalam bilik tempat urusan dimeterai, tempat pasukan berdebat, tempat satu ketegangan yang tidak diucapkan antara dua rakan sekerja mampu menggagalkan kontrak bernilai jutaan dolar. Beliau melihat kumpulan berjaya dan gagal, dan menyedari sesuatu yang tidak pernah ditangkap oleh teknologi: ruang antara apa yang dikatakan dan apa yang sebenarnya dimaksudkan.">Selama dua puluh tahun, <span class="nick">Nicholas Chin</span> — pengasas AntaraLogic® — menjual teknologi perusahaan di seluruh Asia-Pasifik. Bukan dari belakang meja — tetapi dari dalam bilik tempat urusan dimeterai, tempat pasukan berdebat, tempat satu ketegangan yang tidak diucapkan antara dua rakan sekerja mampu menggagalkan kontrak bernilai jutaan dolar. Beliau melihat kumpulan berjaya dan gagal, dan menyedari sesuatu yang tidak pernah ditangkap oleh teknologi: ruang antara apa yang dikatakan dan apa yang sebenarnya dimaksudkan.</p>
 </div>
 
-<!-- ILLUSTRATION 1: The Observation -->
 <div class="illus-break reveal">
   <div class="illus-icon gold-bg">💡</div>
-  <div class="illus-label">The Observation</div>
-  <p class="illus-sublabel">Every AI talks to one person at a time. But life’s biggest decisions are made together.</p>
+  <div class="illus-label" data-en="The Observation" data-bm="Pemerhatian">Pemerhatian</div>
+  <p class="illus-sublabel" data-en="Every AI talks to one person at a time. But life's biggest decisions are made together." data-bm="Setiap AI bercakap dengan satu individu pada satu masa. Tetapi keputusan terbesar dalam hidup dibuat bersama.">Setiap AI bercakap dengan satu individu pada satu masa. Tetapi keputusan terbesar dalam hidup dibuat bersama.</p>
 </div>
 
 <div class="story-section reveal">
-  <p>When large language models arrived—ChatGPT, Claude, Gemini—the world marvelled at their ability to converse, to reason, to create. But every interface was the same: one human, one machine, one conversation. The architecture assumed that intelligence was a private transaction.</p>
+  <p data-en="When large language models arrived — ChatGPT, Claude, Gemini — the world marvelled at their ability to converse, to reason, to create. But every interface was the same: one human, one machine, one conversation. The architecture assumed that intelligence was a private transaction." data-bm="Apabila model bahasa besar muncul — ChatGPT, Claude, Gemini — dunia terpesona dengan keupayaan mereka untuk berkomunikasi, berfikir, dan mencipta. Namun setiap antara muka adalah sama: satu manusia, satu mesin, satu perbualan. Seni bina ini mengandaikan bahawa kecerdasan ialah satu transaksi peribadi.">Apabila model bahasa besar muncul — ChatGPT, Claude, Gemini — dunia terpesona dengan keupayaan mereka untuk berkomunikasi, berfikir, dan mencipta. Namun setiap antara muka adalah sama: satu manusia, satu mesin, satu perbualan. Seni bina ini mengandaikan bahawa kecerdasan ialah satu transaksi peribadi.</p>
 </div>
 
 <div class="story-section reveal">
-  <p><span class="nick">Nick</span> knew otherwise. Intelligence—the kind that builds businesses and holds families together and keeps small teams alive in hard markets—is not private. It is collective. It emerges from the friction of different perspectives, the patience of listening, and the courage to say what needs to be said in front of people who matter.</p>
+  <p data-en-html="<span class=&quot;nick&quot;>Nick</span> knew otherwise. Intelligence — the kind that builds businesses and holds families together and keeps small teams alive in hard markets — is not private. It is collective. It emerges from the friction of different perspectives, the patience of listening, and the courage to say what needs to be said in front of people who matter." data-bm-html="<span class=&quot;nick&quot;>Nick</span> tahu itu tidak benar. Kecerdasan — jenis yang membina perniagaan, mengikat keluarga, dan memastikan pasukan kecil terus bertahan dalam pasaran yang sukar — bukanlah peribadi. Ia bersifat kolektif. Ia muncul daripada geseran perspektif berbeza, kesabaran untuk mendengar, dan keberanian untuk menyatakan apa yang perlu dikatakan di hadapan mereka yang penting."><span class="nick">Nick</span> tahu itu tidak benar. Kecerdasan — jenis yang membina perniagaan, mengikat keluarga, dan memastikan pasukan kecil terus bertahan dalam pasaran yang sukar — bukanlah peribadi. Ia bersifat kolektif. Ia muncul daripada geseran perspektif berbeza, kesabaran untuk mendengar, dan keberanian untuk menyatakan apa yang perlu dikatakan di hadapan mereka yang penting.</p>
 </div>
 
-<!-- PULL QUOTE 1 -->
 <div class="pull-quote reveal">
-  <blockquote>Every AI on the market is built for the individual. None of them are built for the group.</blockquote>
+  <blockquote data-en="&quot;Every AI on the market is built for the individual. None of them are built for the group.&quot;" data-bm="&quot;Setiap AI di pasaran dibina untuk individu. Tiada satu pun dibina untuk kumpulan.&quot;">"Setiap AI di pasaran dibina untuk individu. Tiada satu pun dibina untuk kumpulan."</blockquote>
 </div>
 
 <div class="story-section reveal">
-  <p>AntaraLogic® was born from that observation. Not as a technology company seeking a market, but as a market reality seeking the right technology. In ASEAN alone, there are more than seventy million small and medium enterprises—the kopitiam operators, the family logistics firms, the three-person design studios—all of whom collaborate daily with the tools of a previous era: group chats that bury insight in noise, spreadsheets that nobody updates, and meetings that end without resolution.</p>
+  <p data-en="AntaraLogic® was born from that observation. Not as a technology company seeking a market, but as a market reality seeking the right technology. In ASEAN alone, there are more than seventy million small and medium enterprises — the kopitiam operators, the family logistics firms, the three-person design studios — all of whom collaborate daily with the tools of a previous era: group chats that bury insight in noise, spreadsheets that nobody updates, and meetings that end without resolution." data-bm="AntaraLogic® lahir daripada pemerhatian itu. Bukan sebagai syarikat teknologi yang mencari pasaran, tetapi sebagai realiti pasaran yang mencari teknologi yang tepat. Di ASEAN sahaja, terdapat lebih daripada tujuh puluh juta perusahaan kecil dan sederhana — pengusaha kopitiam, syarikat logistik keluarga, studio reka bentuk tiga orang — yang setiap hari bekerjasama menggunakan alat dari era sebelumnya: sembang kumpulan yang menenggelamkan wawasan dalam bunyi, hamparan data yang tidak dikemas kini, dan mesyuarat yang berakhir tanpa keputusan.">AntaraLogic® lahir daripada pemerhatian itu. Bukan sebagai syarikat teknologi yang mencari pasaran, tetapi sebagai realiti pasaran yang mencari teknologi yang tepat. Di ASEAN sahaja, terdapat lebih daripada tujuh puluh juta perusahaan kecil dan sederhana — pengusaha kopitiam, syarikat logistik keluarga, studio reka bentuk tiga orang — yang setiap hari bekerjasama menggunakan alat dari era sebelumnya: sembang kumpulan yang menenggelamkan wawasan dalam bunyi, hamparan data yang tidak dikemas kini, dan mesyuarat yang berakhir tanpa keputusan.</p>
 </div>
 
 <div class="story-section reveal">
-  <p>These businesses do not need artificial intelligence that replaces them. They need intelligence that understands them—not as individual users, but as working groups with shared context, unspoken dynamics, and collective memory.</p>
+  <p data-en="These businesses do not need artificial intelligence that replaces them. They need intelligence that understands them — not as individual users, but as working groups with shared context, unspoken dynamics, and collective memory." data-bm="Perniagaan ini tidak memerlukan kecerdasan buatan yang menggantikan mereka. Mereka memerlukan kecerdasan yang memahami mereka — bukan sebagai pengguna individu, tetapi sebagai kumpulan kerja dengan konteks bersama, dinamika yang tidak diucapkan, dan memori kolektif.">Perniagaan ini tidak memerlukan kecerdasan buatan yang menggantikan mereka. Mereka memerlukan kecerdasan yang memahami mereka — bukan sebagai pengguna individu, tetapi sebagai kumpulan kerja dengan konteks bersama, dinamika yang tidak diucapkan, dan memori kolektif.</p>
 </div>
 
-<!-- SECTION: THE ARCHITECTURE -->
 <div class="story-heading reveal">
-  <h2>The Architecture</h2>
+  <h2 data-en="The Architecture" data-bm="Seni Bina">Seni Bina</h2>
   <div class="gold-line"></div>
 </div>
 
 <div class="story-section reveal">
-  <p>AntaraLogic® sits between the AI engines built by companies like Anthropic, OpenAI, and Google — and the real human relationships those engines are supposed to serve. The big models can reason, write, and create. But they don't understand your team. They don't know who in the room disagrees but won't say it. They don't see the pattern forming across three separate conversations. That's the gap <span class="nick">Nick</span> set out to close — not by building another AI model, but by building the platform that gives those models context about how groups actually work.</p>
+  <p data-en-html="AntaraLogic® sits between the AI engines built by companies like Anthropic, OpenAI, and Google — and the real human relationships those engines are supposed to serve. The big models can reason, write, and create. But they don't understand your team. They don't know who in the room disagrees but won't say it. They don't see the pattern forming across three separate conversations. That's the gap <span class=&quot;nick&quot;>Nick</span> set out to close — not by building another AI model, but by building the platform that gives those models context about how groups actually work." data-bm-html="AntaraLogic® berada di antara enjin AI yang dibina oleh syarikat seperti Anthropic, OpenAI, dan Google — dan hubungan manusia sebenar yang sepatutnya dilayani oleh enjin tersebut. Model besar ini boleh berfikir, menulis, dan mencipta. Tetapi mereka tidak memahami pasukan anda. Mereka tidak tahu siapa dalam bilik yang tidak bersetuju tetapi tidak bersuara. Mereka tidak melihat corak yang terbentuk merentasi tiga perbualan berasingan. Itulah jurang yang <span class=&quot;nick&quot;>Nick</span> ingin tutup — bukan dengan membina satu lagi model AI, tetapi dengan membina platform yang memberikan konteks kepada model-model ini tentang bagaimana kumpulan sebenarnya berfungsi.">AntaraLogic® berada di antara enjin AI yang dibina oleh syarikat seperti Anthropic, OpenAI, dan Google — dan hubungan manusia sebenar yang sepatutnya dilayani oleh enjin tersebut. Model besar ini boleh berfikir, menulis, dan mencipta. Tetapi mereka tidak memahami pasukan anda. Mereka tidak tahu siapa dalam bilik yang tidak bersetuju tetapi tidak bersuara. Mereka tidak melihat corak yang terbentuk merentasi tiga perbualan berasingan. Itulah jurang yang <span class="nick">Nick</span> ingin tutup — bukan dengan membina satu lagi model AI, tetapi dengan membina platform yang memberikan konteks kepada model-model ini tentang bagaimana kumpulan sebenarnya berfungsi.</p>
 </div>
 
 <div class="story-section reveal">
-  <p>The AntaraPlatforms® product suite is built around a simple but profound constraint: the Power of 12. Groups of one to twelve members interact with an AI presence called @Sage®, which observes, learns, and surfaces patterns—but only when two or more independent data points from different members converge. @Sage® does not speak to flatter. It does not speak to fill silence. It speaks when something real has emerged from the group’s own interaction.</p>
+  <p data-en="The AntaraPlatforms® product suite is built around a simple but profound constraint: the Power of 12. Groups of one to twelve members interact with an AI presence called @Sage®, which observes, learns, and surfaces patterns — but only when two or more independent data points from different members converge. @Sage® does not speak to flatter. It does not speak to fill silence. It speaks when something real has emerged from the group's own interaction." data-bm="Rangkaian produk AntaraPlatforms® dibina berasaskan satu kekangan yang ringkas tetapi mendalam: Kuasa 12. Kumpulan yang terdiri daripada satu hingga dua belas ahli berinteraksi dengan satu kehadiran AI bernama @Sage®, yang memerhati, belajar, dan menonjolkan corak — tetapi hanya apabila dua atau lebih titik data bebas daripada ahli yang berbeza bertemu. @Sage® tidak bersuara untuk memuji. Ia tidak bersuara untuk mengisi kesunyian. Ia bersuara apabila sesuatu yang benar-benar bermakna muncul daripada interaksi kumpulan itu sendiri.">Rangkaian produk AntaraPlatforms® dibina berasaskan satu kekangan yang ringkas tetapi mendalam: Kuasa 12. Kumpulan yang terdiri daripada satu hingga dua belas ahli berinteraksi dengan satu kehadiran AI bernama @Sage®, yang memerhati, belajar, dan menonjolkan corak — tetapi hanya apabila dua atau lebih titik data bebas daripada ahli yang berbeza bertemu. @Sage® tidak bersuara untuk memuji. Ia tidak bersuara untuk mengisi kesunyian. Ia bersuara apabila sesuatu yang benar-benar bermakna muncul daripada interaksi kumpulan itu sendiri.</p>
 </div>
 
 <div class="story-section reveal">
-  <p>Twelve members generate sixty-six unique communication paths. That is enough complexity for genuine pattern recognition, but small enough that every member can hold every other member—and the AI—accountable. The constraint is not a limitation. It is the architecture of trust.</p>
+  <p data-en="Twelve members generate sixty-six unique communication paths. That is enough complexity for genuine pattern recognition, but small enough that every member can hold every other member — and the AI — accountable. The constraint is not a limitation. It is the architecture of trust." data-bm="Dua belas ahli menghasilkan enam puluh enam laluan komunikasi unik. Ini cukup kompleks untuk pengecaman corak yang sebenar, tetapi cukup kecil untuk setiap ahli memahami satu sama lain — dan juga AI — dengan jelas. Kekangan ini bukan satu batasan. Ia adalah seni bina kepercayaan.">Dua belas ahli menghasilkan enam puluh enam laluan komunikasi unik. Ini cukup kompleks untuk pengecaman corak yang sebenar, tetapi cukup kecil untuk setiap ahli memahami satu sama lain — dan juga AI — dengan jelas. Kekangan ini bukan satu batasan. Ia adalah seni bina kepercayaan.</p>
 </div>
 
-<!-- ILLUSTRATION 2: The Architecture -->
 <div class="illus-break reveal">
   <div class="illus-icon charcoal-bg">🔗</div>
-  <div class="illus-label">Power of 12</div>
-  <p class="illus-sublabel">12 members. 66 communication paths. Constraint is the architecture of trust.</p>
+  <div class="illus-label" data-en="Power of 12" data-bm="Kuasa 12">Kuasa 12</div>
+  <p class="illus-sublabel" data-en="12 members. 66 communication paths. Constraint is the architecture of trust." data-bm="12 ahli. 66 laluan komunikasi. Kekangan ialah seni bina kepercayaan.">12 ahli. 66 laluan komunikasi. Kekangan ialah seni bina kepercayaan.</p>
 </div>
 
-<!-- SECTION: THE EQUALISER -->
 <div class="story-heading reveal">
-  <h2>The Equaliser</h2>
+  <h2 data-en="The Equaliser" data-bm="Penyama Taraf">Penyama Taraf</h2>
   <div class="gold-line"></div>
 </div>
 
-<!-- PULL QUOTE 2 -->
 <div class="pull-quote reveal">
-  <blockquote>AI is the great equaliser. A brilliant expert friend that everyone deserves but few have access to.</blockquote>
+  <blockquote data-en="&quot;AI is the great equaliser. A brilliant expert friend that everyone deserves but few have access to.&quot;" data-bm="&quot;AI ialah penyama taraf terbesar. Seorang pakar hebat yang semua orang layak miliki tetapi hanya segelintir yang mampu capai.&quot;">"AI ialah penyama taraf terbesar. Seorang pakar hebat yang semua orang layak miliki tetapi hanya segelintir yang mampu capai."</blockquote>
 </div>
 
 <div class="story-section reveal">
-  <p>Consider a café operator in Hartamas. He manages a team of five. His margins are thin. He cannot afford a management consultant, a business analyst, or even a full-time bookkeeper. But his team talks every day—about what sold, what didn’t, which supplier was late, which regular customer hasn’t been in this week.</p>
+  <p data-en="Consider a café operator in Hartamas. He manages a team of five. His margins are thin. He cannot afford a management consultant, a business analyst, or even a full-time bookkeeper. But his team talks every day — about what sold, what didn't, which supplier was late, which regular customer hasn't been in this week." data-bm="Bayangkan seorang pengusaha kafe di Hartamas. Dia menguruskan pasukan seramai lima orang. Margin keuntungannya kecil. Dia tidak mampu mendapatkan khidmat perunding pengurusan, penganalisis perniagaan, atau pun akauntan sepenuh masa. Tetapi pasukannya berbual setiap hari — tentang apa yang laku, apa yang tidak, pembekal yang lewat, pelanggan tetap yang tidak muncul minggu ini.">Bayangkan seorang pengusaha kafe di Hartamas. Dia menguruskan pasukan seramai lima orang. Margin keuntungannya kecil. Dia tidak mampu mendapatkan khidmat perunding pengurusan, penganalisis perniagaan, atau pun akauntan sepenuh masa. Tetapi pasukannya berbual setiap hari — tentang apa yang laku, apa yang tidak, pembekal yang lewat, pelanggan tetap yang tidak muncul minggu ini.</p>
 </div>
 
 <div class="story-section reveal">
-  <p>Now give that team @Sage® through AntaraPlatforms®. Not as a chatbot that answers questions, but as a quiet presence that listens to the rhythm of the business. When two staff members independently mention that weekend demand for iced drinks has shifted, @Sage® surfaces the pattern. When the owner mentions rising costs in one conversation and a staff member mentions a cheaper alternative in another, @Sage® connects the dots. No one asked. The insight emerged because the group was already thinking about it—they just didn’t know it yet.</p>
+  <p data-en="Now give that team @Sage® through AntaraPlatforms®. Not as a chatbot that answers questions, but as a quiet presence that listens to the rhythm of the business. When two staff members independently mention that weekend demand for iced drinks has shifted, @Sage® surfaces the pattern. When the owner mentions rising costs in one conversation and a staff member mentions a cheaper alternative in another, @Sage® connects the dots. No one asked. The insight emerged because the group was already thinking about it — they just didn't know it yet." data-bm="Kini berikan pasukan itu @Sage® melalui AntaraPlatforms®. Bukan sebagai chatbot yang menjawab soalan, tetapi sebagai kehadiran senyap yang mendengar rentak perniagaan mereka. Apabila dua kakitangan secara berasingan menyebut bahawa permintaan hujung minggu untuk minuman ais telah berubah, @Sage® menonjolkan corak tersebut. Apabila pemilik menyebut kos yang meningkat dalam satu perbualan dan seorang kakitangan menyebut alternatif yang lebih murah dalam perbualan lain, @Sage® menghubungkan titik-titik itu. Tiada siapa bertanya. Wawasan itu muncul kerana kumpulan tersebut sudah memikirkannya — mereka cuma belum menyedarinya.">Kini berikan pasukan itu @Sage® melalui AntaraPlatforms®. Bukan sebagai chatbot yang menjawab soalan, tetapi sebagai kehadiran senyap yang mendengar rentak perniagaan mereka. Apabila dua kakitangan secara berasingan menyebut bahawa permintaan hujung minggu untuk minuman ais telah berubah, @Sage® menonjolkan corak tersebut. Apabila pemilik menyebut kos yang meningkat dalam satu perbualan dan seorang kakitangan menyebut alternatif yang lebih murah dalam perbualan lain, @Sage® menghubungkan titik-titik itu. Tiada siapa bertanya. Wawasan itu muncul kerana kumpulan tersebut sudah memikirkannya — mereka cuma belum menyedarinya.</p>
 </div>
 
 <div class="story-section reveal">
-  <p>This is the promise of collective intelligence infrastructure. Not AI that thinks for you, but AI that helps groups think together. The kopitiam operator gets the same calibre of insight that a multinational gets from a team of analysts. The three-person design studio sees patterns in their client feedback that would take weeks to uncover manually. The family planning a wedding coordinates across generations without losing the thread.</p>
+  <p data-en="This is the promise of collective intelligence infrastructure. Not AI that thinks for you, but AI that helps groups think together. The kopitiam operator gets the same calibre of insight that a multinational gets from a team of analysts. The three-person design studio sees patterns in their client feedback that would take weeks to uncover manually. The family planning a wedding coordinates across generations without losing the thread." data-bm="Inilah janji infrastruktur kecerdasan kolektif. Bukan AI yang berfikir untuk anda, tetapi AI yang membantu kumpulan berfikir bersama. Pengusaha kopitiam mendapat tahap wawasan yang sama seperti syarikat multinasional yang mempunyai pasukan penganalisis. Studio reka bentuk tiga orang dapat melihat corak dalam maklum balas pelanggan yang biasanya mengambil masa berminggu-minggu untuk dikenal pasti secara manual. Sebuah keluarga yang merancang majlis perkahwinan dapat menyelaras merentasi generasi tanpa kehilangan arah perbincangan.">Inilah janji infrastruktur kecerdasan kolektif. Bukan AI yang berfikir untuk anda, tetapi AI yang membantu kumpulan berfikir bersama. Pengusaha kopitiam mendapat tahap wawasan yang sama seperti syarikat multinasional yang mempunyai pasukan penganalisis. Studio reka bentuk tiga orang dapat melihat corak dalam maklum balas pelanggan yang biasanya mengambil masa berminggu-minggu untuk dikenal pasti secara manual. Sebuah keluarga yang merancang majlis perkahwinan dapat menyelaras merentasi generasi tanpa kehilangan arah perbincangan.</p>
 </div>
 
-<!-- ILLUSTRATION 3: The Tech Gap -->
 <div class="illus-break reveal">
   <div class="illus-icon copper-bg">🌏</div>
-  <div class="illus-label">The Gap AI Hasn’t Closed</div>
-  <p class="illus-sublabel">70 million ASEAN SMEs still run on group chats and spreadsheets. The AI revolution hasn’t reached them—yet.</p>
+  <div class="illus-label" data-en="The Gap AI Hasn't Closed" data-bm="Jurang Yang Belum Ditutup AI">Jurang Yang Belum Ditutup AI</div>
+  <p class="illus-sublabel" data-en="70 million ASEAN SMEs still run on group chats and spreadsheets. The AI revolution hasn't reached them — yet." data-bm="70 juta PKS ASEAN masih bergantung pada sembang kumpulan dan hamparan data. Revolusi AI masih belum sampai kepada mereka — lagi.">70 juta PKS ASEAN masih bergantung pada sembang kumpulan dan hamparan data. Revolusi AI masih belum sampai kepada mereka — lagi.</p>
 </div>
 
-<!-- SECTION: THE TECH GAP -->
 <div class="story-heading reveal">
-  <h2>The Gap AI Hasn’t Closed</h2>
+  <h2 data-en="The Gap AI Hasn't Closed" data-bm="Jurang Yang Belum Ditutup AI">Jurang Yang Belum Ditutup AI</h2>
   <div class="gold-line"></div>
 </div>
 
 <div class="story-section reveal">
-  <p>Southeast Asia is not Silicon Valley. It is a mosaic of languages, cultures, and business practices where relationships precede transactions and trust is earned in person. The region’s seventy million SMEs are the backbone of its economy, but they have been largely left out of the AI revolution—not because the technology is unavailable, but because it was not built for them.</p>
+  <p data-en="Southeast Asia is not Silicon Valley. It is a mosaic of languages, cultures, and business practices where relationships precede transactions and trust is earned in person. The region's seventy million SMEs are the backbone of its economy, but they have been largely left out of the AI revolution — not because the technology is unavailable, but because it was not built for them." data-bm="Asia Tenggara bukan Silicon Valley. Ia adalah mozek bahasa, budaya, dan amalan perniagaan di mana hubungan mendahului transaksi dan kepercayaan dibina secara bersemuka. Tujuh puluh juta PKS di rantau ini merupakan tulang belakang ekonominya, namun sebahagian besar masih terpinggir daripada revolusi AI — bukan kerana teknologi itu tiada, tetapi kerana ia tidak dibina untuk mereka.">Asia Tenggara bukan Silicon Valley. Ia adalah mozek bahasa, budaya, dan amalan perniagaan di mana hubungan mendahului transaksi dan kepercayaan dibina secara bersemuka. Tujuh puluh juta PKS di rantau ini merupakan tulang belakang ekonominya, namun sebahagian besar masih terpinggir daripada revolusi AI — bukan kerana teknologi itu tiada, tetapi kerana ia tidak dibina untuk mereka.</p>
 </div>
 
 <div class="story-section reveal">
-  <p>AntaraPlatforms® is designed for exactly how they work. In circles, not silos. In conversation, not dashboards. In the language and rhythm of the teams themselves, not the sanitised templates of enterprise software built for Fortune 500 boardrooms.</p>
+  <p data-en="AntaraPlatforms® is designed for exactly how they work. In circles, not silos. In conversation, not dashboards. In the language and rhythm of the teams themselves, not the sanitised templates of enterprise software built for Fortune 500 boardrooms." data-bm="AntaraPlatforms® direka tepat mengikut cara mereka bekerja. Dalam lingkaran, bukan silo. Dalam perbualan, bukan papan pemuka. Dalam bahasa dan rentak pasukan itu sendiri, bukan templat steril perisian perusahaan yang dibina untuk bilik lembaga Fortune 500.">AntaraPlatforms® direka tepat mengikut cara mereka bekerja. Dalam lingkaran, bukan silo. Dalam perbualan, bukan papan pemuka. Dalam bahasa dan rentak pasukan itu sendiri, bukan templat steril perisian perusahaan yang dibina untuk bilik lembaga Fortune 500.</p>
 </div>
 
-<!-- MISSION -->
 <div class="story-heading reveal">
-  <h2>The Mission</h2>
+  <h2 data-en="The Mission" data-bm="Misi">Misi</h2>
   <div class="gold-line"></div>
 </div>
 
 <div class="story-section reveal">
-  <p>To build the infrastructure that makes collective intelligence accessible to every team, every family, and every community—starting with ASEAN.</p>
+  <p data-en="To build the infrastructure that makes collective intelligence accessible to every team, every family, and every community — starting with ASEAN." data-bm="Membina infrastruktur yang menjadikan kecerdasan kolektif boleh diakses oleh setiap pasukan, setiap keluarga, dan setiap komuniti — bermula dengan ASEAN.">Membina infrastruktur yang menjadikan kecerdasan kolektif boleh diakses oleh setiap pasukan, setiap keluarga, dan setiap komuniti — bermula dengan ASEAN.</p>
 </div>
 
-<!-- BACK TO PRODUCTS -->
-<a href="index.html#products" class="back-link reveal">Explore our products →</a>
+<a href="products.html" class="back-link reveal"><span data-en="Explore our products" data-bm="Terokai produk kami">Terokai produk kami</span> →</a>
 
-<!-- BIO -->
 <div class="bio-section reveal">
-  <p>*Nicholas Chin is the Founder & CEO of AntaraLogic®. Born in Ipoh, educated in Newcastle upon Tyne, returned to work in Kuala Lumpur, moved down south to Singapore to expand his career, and now living in Johor Bahru. Twenty years of enterprise technology sales across Asia-Pacific. Building something that didn’t exist—because somebody had to.</p>
+  <p data-en="*Nicholas Chin is the Founder & CEO of AntaraLogic®. Born in Ipoh, educated in Newcastle upon Tyne, returned to work in Kuala Lumpur, moved down south to Singapore to expand his career, and now living in Johor Bahru. Twenty years of enterprise technology sales across Asia-Pacific. Building something that didn't exist — because somebody had to." data-bm="*Nicholas Chin ialah Pengasas & CEO AntaraLogic®. Dilahirkan di Ipoh, mendapat pendidikan di Newcastle upon Tyne, kembali bekerja di Kuala Lumpur, kemudian berhijrah ke selatan ke Singapura untuk mengembangkan kerjaya, dan kini menetap di Johor Bahru. Dua puluh tahun dalam jualan teknologi perusahaan di seluruh Asia-Pasifik. Membina sesuatu yang belum pernah wujud — kerana seseorang perlu melakukannya.">*Nicholas Chin ialah Pengasas & CEO AntaraLogic®. Dilahirkan di Ipoh, mendapat pendidikan di Newcastle upon Tyne, kembali bekerja di Kuala Lumpur, kemudian berhijrah ke selatan ke Singapura untuk mengembangkan kerjaya, dan kini menetap di Johor Bahru. Dua puluh tahun dalam jualan teknologi perusahaan di seluruh Asia-Pasifik. Membina sesuatu yang belum pernah wujud — kerana seseorang perlu melakukannya.</p>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <img src="data:image/png;base64,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" alt="AntaraLogic" class="footer-logo-img">
-  <p class="footer-tagline">The Collective Intelligence Infrastructure</p>
+  <div class="footer-coming" data-en="◆ COMING SOON" data-bm="◆ AKAN DATANG">◆ AKAN DATANG</div>
+  <p class="footer-tagline" data-en="The Collective Intelligence Infrastructure" data-bm="Infrastruktur Kecerdasan Kolektif">Infrastruktur Kecerdasan Kolektif</p>
   <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="story.html">Our Story</a>
-    <a href="index.html#products">Products</a>
-    <a href="ir.html">Investor Relations</a>
+    <a href="index.html" data-en="Home" data-bm="Laman Utama">Laman Utama</a>
+    <a href="story.html" data-en="Our Story" data-bm="Kisah Kami">Kisah Kami</a>
+    <a href="products.html" data-en="Products" data-bm="Produk">Produk</a>
+    <a href="ir.html" data-en="Investor Relations" data-bm="Perhubungan Pelabur">Perhubungan Pelabur</a>
+    <a href="contact.html" data-en="Register Interest" data-bm="Daftar Minat">Daftar Minat</a>
   </div>
-  <p class="footer-credit">© 2026 AntaraLogic Holdings Sdn Bhd<br>All rights reserved.<br><br>Built with Claude Opus 4.6 · For AntaraLogic®</p>
+  <p class="footer-credit">
+    <span data-en="© 2026 AntaraLogic Holdings Sdn Bhd" data-bm="© 2026 AntaraLogic Holdings Sdn Bhd">© 2026 AntaraLogic Holdings Sdn Bhd</span><br>
+    <span data-en="All rights reserved." data-bm="Hak cipta terpelihara.">Hak cipta terpelihara.</span><br><br>
+    <span data-en="Made in Malaysia. Built for ASEAN." data-bm="Dibuat di Malaysia. Dibina untuk ASEAN.">Dibuat di Malaysia. Dibina untuk ASEAN.</span>
+  </p>
 </footer>
 
 <script>
   document.body.classList.add('js-loaded');
+  // Hide back button on homepage
+  (function() {
+    var path = window.location.pathname.split('/').pop() || 'index.html';
+    if (path === '' || path === 'index.html') {
+      var btn = document.getElementById('backHome');
+      if (btn) btn.classList.add('is-home');
+    }
+  })();
+
+
+  function getCurrentLang() {
+    return localStorage.getItem('antaralogic_lang') || 'bm';
+  }
+
+  function setLanguage(lang) {
+    localStorage.setItem('antaralogic_lang', lang);
+    document.documentElement.lang = (lang === 'bm') ? 'ms' : 'en';
+
+    document.querySelectorAll('[data-en][data-bm]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + lang);
+    });
+
+    document.querySelectorAll('[data-en-html][data-bm-html]').forEach(el => {
+      el.innerHTML = el.getAttribute('data-' + lang + '-html');
+    });
+
+    document.getElementById('langBM').classList.toggle('active', lang === 'bm');
+    document.getElementById('langEN').classList.toggle('active', lang === 'en');
+  }
+
+  setLanguage(getCurrentLang());
+
+  document.getElementById('langBM').addEventListener('click', () => setLanguage('bm'));
+  document.getElementById('langEN').addEventListener('click', () => setLanguage('en'));
+
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
